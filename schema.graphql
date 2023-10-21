@@ -1,0 +1,23 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Stock {
+    symbol: String!
+    name: String!
+    currentPrice: Float!
+    volume: Int!
+    minPrice: Float!
+    maxPrice: Float!
+}
+
+type Query {
+    getStocks: [Stock]!
+    getStock(symbol: String!): Stock!
+}
+
+
+type Mutation {
+    addStock(symbol: String!, name: String!, currentPrice: Float!, volume: Int!): Stock!
+}
